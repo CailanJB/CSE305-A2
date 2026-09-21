@@ -1,0 +1,10 @@
+; DO NOT EDIT.  What your tests in test/test_student.ml see as Gameengine
+; On Autolab, your test_student.ml runs against OUR engine, which has only the
+; declarations of the provided state.mli and command.mli, not the ones you add.
+; This library gives your tests the same view here, so a test that uses
+; one of your own declarations fails in "make test" instead of on Autolab.
+; Tests of your own declarations belong in test/test_helpers.ml.
+
+(library
+ (name gameengine)
+ (libraries engine))

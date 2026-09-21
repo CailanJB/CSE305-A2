@@ -1,0 +1,13 @@
+; test_student.ml opens Gameengine: your engine narrowed to the interface we provided and grade against.
+; test_helpers.ml opens Engine: your whole engine, for tests of your own declarations.
+; The deps copy the adventure files into _build/, so tests can
+; load them as ../example_games/<name>.json.
+
+(test
+ (name run_tests)
+ (modules test_student test_helpers run_tests)
+ (deps
+  (glob_files ../example_games/*.json))
+ (flags
+  (:standard -w -32-33 -warn-error -a))
+ (libraries gameengine engine ounit2))
